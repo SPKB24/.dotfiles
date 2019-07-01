@@ -7,7 +7,6 @@
   * [Install](#install)
   * [Uninstall](#uninstall)
 
-
 ## Introduction
 
 These are dotfiles for my setup on MacOS. It includes vim (plugins, vimrc, etc), zsh, and iterm configurations.
@@ -23,41 +22,15 @@ Most of the stuff here is meant to be used on MacOS, and therefore might not wor
 
 ## Usage
 
+### Dependencies
+
+* [Oh My Zsh](https://github.com/robbyrussell/oh-my-zsh)
+* [Tmux](https://github.com/tmux/tmux) (optional)
+
 ### Install
 
-**Oh My Zsh** - https://github.com/robbyrussell/oh-my-zsh
-
-via curl
 ```bash
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-```
-
-via wget
-```bash
-sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
-```
-
-**Tmux (optional)** - https://github.com/tmux/tmux
-
-Debian/Ubuntu
-```bash
-sudo apt-get install tmux
-```
-
-RedHat/CentOS
-```bash
-yum install tmux
-```
-
-MacOS
-```bash
-brew install tmux
-```
-
-**Dotfiles**
-
-```bash
-git clone https://github.com/SPKB24/.dotfiles.git ~/.dotfiles 
+git clone --recurse-submodules https://github.com/SPKB24/.dotfiles.git ~/.dotfiles 
 cd ~/.dotfiles && chmod +x setup.sh && bash setup.sh 
 ```
 
