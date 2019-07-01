@@ -1,0 +1,115 @@
+# General
+alias v="vim"
+alias vi="vim"
+alias vimrc="vim $MYVIMRC"
+alias vimwiki="cd ~/.vimwiki"
+alias notesdir="cd ~/OneDrive/notes"
+alias notes="vim ~/OneDrive/notes/index.wiki"
+alias todo="vim ~/OneDrive/notes/todo/index.wiki"
+alias cd..="cd .."
+alias lines='grep -c ""'
+alias py="python3"
+alias rm="echo 'BAD! Use \"del\"' command instead to safe delete into the trash bin"
+alias del="rmtrash" # brew install rmtrash
+alias git="hub" # brew install hub
+
+# Navigation
+alias finder="open ."
+alias dot="cd $DOTFILES"
+alias Desktop="cd ~/Desktop"
+alias Downloads="cd ~/Downloads"
+alias Documents="cd ~/Documents"
+alias Pictures="cd ~/Pictures"
+alias Movies="cd ~/Movies"
+alias Music="cd ~/Music"
+alias Code="cd ~/Code"
+
+# ls
+alias list="ls -1"
+alias lsdir="ls -d */"
+alias tls="tree -l 2"
+alias tlss="tree -l 3"
+alias tlsss="tree -l 4"
+
+# Git
+alias gs="git status"
+alias gitlog="git log --graph --decorate"
+alias gitstashlist="git stash list --pretty=format:'%Cblue%gd%Cred: %C(yellow)%s'"
+
+# Spotify
+alias splay="spotify play"
+alias spause="spotify pause"
+alias snext="spotify next"
+alias sprev="spotify prev"
+alias song="spotify info | grep --color -E 'Artist:|Track:|Album:' | grep -v 'Album Artist'"
+
+# Tmux
+alias tmuxrc="$EDITOR $DOTFILES/tmux/tmux.conf"
+alias tmuxconf="$EDITOR $DOTFILES/tmux/tmux.conf"
+alias tmuxa="tmux attach -t"
+alias tmuxn="tmux new -s"
+alias tmuxk="tmux kill-session -t"
+alias tmuxls="tmux ls"
+alias tmuxiams="tmuxiamsohit"
+alias tmuxiamsohit="bash ~/scripts/tmux/iAmSohit.sh"
+alias tmuxmovie="tmuxmoviemanager"
+alias tmuxmoviemanager="bash ~/scripts/tmux/movieManager.sh"
+
+# Woof
+alias woof="/Users/sohit/Code/woof/woof"
+
+# Terminal-Notifier
+# brew install terminal-notifier
+alias notify="terminal-notifier"
+alias alert="teminal-nortifier"
+
+# Phillips Hue lights
+# npm install -g hueadm
+alias hue="hueadm"
+alias huelights="hue lights"
+alias hueall="hue lights"
+alias hueon="hueall on"
+alias hueoff="hueall off"
+alias huecolors="hueall 3 colorloop"
+alias huestop="hueall clear"
+alias hueclear="hueall clear"
+alias hueblink="hueall alert"
+alias huebright="hue lights 1,2,3 +20"
+alias huedim="hue lights 1,2,3 -20"
+alias huemax="hue lights 1,2,3 +255"
+
+# nba-go
+# npm install -g nba-go
+alias nba="nba-go game"
+
+# Pokemon (terminal background)
+# https://github.com/LazoCoder/Pokemon-Terminal
+alias poke="pokemon -d 0.4 -v | grep 'Chose'"
+alias pokestop="pokemon -ss 1;pokemon -c"
+alias pokeclear="pokemon -ss 1;pokemon -c"
+
+# Calcurse
+# brew install calcurse
+alias cal="calcurse"
+
+# CLI-Timer
+# npm install -g cli-timer
+alias timer="cli-timer on;cli-timer log"
+
+# z (jumping tool) --> see rupa/z
+alias j="z"
+alias jump="z"
+
+# Instant Movie Streamer
+# Forked from yask123/Instant-Movie-Streamer
+alias stream="$HOME/Code/Instant-Movie-Streamer/bin/ims"
+
+# Paths
+export GOPATH="$HOME/go"
+
+# Mac Specific Stuff
+alias copy="pbcopy"
+alias paste="pbpaste"
+alias preview="qlmanage -p"
+alias search="mdfind -name"
+alias chrome="/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --kiosk"

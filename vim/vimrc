@@ -1,0 +1,115 @@
+" Set shell to ZSH
+set shell=/bin/zsh
+
+"""""""""""""""""""""""
+" Important Key Mapping 
+"""""""""""""""""""""""
+let mapleader = ','
+inoremap <leader>s <C-c>:w<cr>
+inoremap <leader>w <C-c>:w<cr>
+inoremap <leader>wq <C-c>:wq<cr>
+nnoremap <leader>s :w<cr>
+nnoremap <leader>w :w<cr>
+nnoremap <leader>wq :wq<cr>
+nnoremap <leader>q :q<cr>
+nnoremap <leader>copy :%w !pbcopy<cr>
+nnoremap <leader>tohtml :%TOhtml<cr>
+nnoremap <leader>k gcc
+nnoremap <leader>, :b 
+nnoremap <leader>. :bd<cr>
+nnoremap <leader><Space> /MARKER<cr>"_cw
+nnoremap <leader>so :so ~/.vimrc<cr>
+" Run the current file in terminal (required being an executable)
+nnoremap <leader>r :!clear;%:p 
+
+" General
+colorscheme onedark
+set number
+set relativenumber
+set tabstop=2
+set softtabstop=2
+set shiftwidth=2
+set expandtab
+set nocompatible
+set ignorecase
+set smartcase
+set cul
+hi CursorLine term=none cterm=none ctermbg=3
+
+" Backup
+set backup
+set backupdir=$DOTFILES/vim/vim/backup
+set directory=$DOTFILES/vim/vim/tmp
+
+" Return to last edit position when opening files 
+autocmd BufReadPost *
+     \ if line("'\"") > 0 && line("'\"") <= line("$") |
+     \   exe "normal! g`\"" |
+     \ endif
+
+" Split Screen Controls
+nnoremap <leader>sv :vsplit<cr>
+nnoremap <leader>sh :split<cr>
+set winheight=5
+set winminheight=5
+set winheight=999
+noremap <C-l> <C-w>l
+noremap <C-h> <C-w>h
+noremap <C-j> <C-w>j
+noremap <C-k> <C-w>k
+
+" Pathogen
+execute pathogen#infect()
+syntax on 
+filetype plugin indent on
+
+" vim-diminactive
+let g:diminactive_use_colorcolumn = 0
+let g:diminactive_use_syntax = 1
+
+" ctrlp.vim
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
+let g:ctrlp_working_path_mode = 'ra'
+let g:ctrlp_switch_buffer = 'et'
+let g:ctrlp_root_markers = ['.root']
+let g:ctrlp_custom_ignore = '\v[\/](\.git|node_modules)$'
+set splitright
+
+" Calcurse
+autocmd BufNewFile,BufReadPost *.md set filetype=markdown
+autocmd BufRead,BufNewFile /private/var/folders/9r/* set filetype=markdown
+autocmd BufRead,BufNewFile $HOME/.calcurse/notes/* set filetype=markdown
+
+" vim-airline
+" https://github.com/vim-airline/vim-airline
+let g:airline_powerline_fonts=1
+let g:Powerline_symbols='fancy'
+set encoding=utf-8
+set fillchars+=stl:\ ,stlnc:\
+set term=xterm-256color
+set termencoding=utf-8
+set laststatus=2
+set t_Co=256
+if has("gui_running")
+   let s:uname = system("uname")
+   if s:uname == "Darwin\n"
+      set guifont=Inconsolata\ for\ Powerline:h15
+   endif
+endif
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Template Checker
+" Store skel.* files in $DOTFILES/vim/vim/templates/ to automatically load
+" them when you create a new file 
+function CheckForTemplate()
+    let extension = expand('%:e')
+    let skelfile = $DOTFILES . "/vim/vim/templates/skel." . extension
+    if filereadable(skelfile)
+        execute "0read " . fnameescape(skelfile)
+    endif
+endf
+if has("autocmd")
+    autocmd BufNewFile * call CheckForTemplate()
+endif

@@ -1,0 +1,10 @@
+vim/vim/tmp
+vim/vim/backup
+vim/vim/.netrwhist
+iterm/com.googlecode.iterm2.plist
+
+# oh-my-zsh ignores
+zsh/oh-my-zsh/custom/plugins/
+zsh/oh-my-zsh/ccustom/example.zsh
+cache/
+log/

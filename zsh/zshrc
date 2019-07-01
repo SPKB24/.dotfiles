@@ -1,0 +1,57 @@
+# PATH
+export PATH=/usr/local/bin:$PATH:$HOME/.rvm/bin:$HOME/.Pokemon-Terminal:$HOME/bin:$HOME/Library/Python/2.7/bin
+export DOTFILES="$HOME/.dotfiles"
+export TERM=screen-256color
+
+# Vim
+export EDITOR="vim"
+export MYVIMRC="$DOTFILES/vim/vimrc"
+
+# ZSHRC
+ZSHRC="$DOTFILES/zsh/zshrc"
+alias zshrc="$EDITOR $ZSHRC"
+
+# ZSH Theme
+ZSH_THEME="Spaceship"
+#ZSH_THEME="powerlevel9k/powerlevel9k"
+#POWERLEVEL9K_TIME_FORMAT="%D{%H:%M:%S} - %D{%d/%m/%Y}"
+#POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=('context' 'dir' 'vcs')
+#POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=('status' 'time')
+#POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=()
+#POWERLEVEL9K_SHOW_CHANGESET=true
+#POWERLEVEL9K_CHANGESET_HASH_LENGTH=6
+#POWERLEVEL9K_RAM_ELEMENTS=(ram_free)
+#POWERLEVEL9K_MODE='nerd-complete'
+
+# ZSH
+plugins=(git osx web-search zsh-autosuggestions z)
+export ZSH="$DOTFILES/zsh/oh-my-zsh"
+source $ZSH/oh-my-zsh.sh
+
+# Custom Aliases
+CUSTOM_ALIASES="$DOTFILES/zsh/custom_aliases"
+alias custom="$EDITOR $CUSTOM_ALIASES"
+alias sourceall="source $CUSTOM_ALIASES;source $ZSHRC"
+source $CUSTOM_ALIASES
+
+# Other Plugins
+# if [ -f $HOME/Code/z/z.sh ]; then
+#     source $HOME/Code/z/z.sh
+# fi
+
+# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
+# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
+# Example format: plugins=(rails git textmate ruby lighthouse)
+
+# ZSH Themes: See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
+# FAVORITE THEMES
+# - steeef
+# - fishy
+# - avit
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
