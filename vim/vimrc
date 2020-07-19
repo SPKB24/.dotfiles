@@ -35,6 +35,7 @@ set ignorecase
 set smartcase
 set cul
 hi CursorLine term=none cterm=none ctermbg=3
+augroup filetype javascript syntax=javascript
 
 " Backup
 set backup

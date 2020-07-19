@@ -34,3 +34,6 @@
 [submodule "vim/vim/bundle/HTML-AutoCloseTag"]
 	path = vim/vim/bundle/HTML-AutoCloseTag
 	url = git@github.com:vim-scripts/HTML-AutoCloseTag.git
+[submodule "vim/vim/bundle/vimwiki"]
+	path = vim/vim/bundle/vimwiki
+	url = git@github.com:vimwiki/vimwiki.git

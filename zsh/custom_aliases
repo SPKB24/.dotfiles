@@ -51,9 +51,9 @@ alias tmuxn="tmux new -s"
 alias tmuxk="tmux kill-session -t"
 alias tmuxls="tmux ls"
 alias tmuxiams="tmuxiamsohit"
-alias tmuxiamsohit="bash ~/scripts/tmux/iAmSohit.sh"
+alias tmuxiamsohit="bash ~/Scripts/tmux/iAmSohit.sh"
 alias tmuxmovie="tmuxmoviemanager"
-alias tmuxmoviemanager="bash ~/scripts/tmux/movieManager.sh"
+alias tmuxmoviemanager="bash ~/Scripts/tmux/movieManager.sh"
 
 # Woof
 alias woof="/Users/sohit/Code/woof/woof"
